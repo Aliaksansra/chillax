@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+ 
+<hibernate-configuration>
+    <session-factory>
+        <property name="dialect">org.hibernate.dialect.HSQLDialect</property>
+        <property name="show_sql">true</property>
+		<property name="hibernate.enable_lazy_load_no_trans">true</property>
+		<property name="hbm2ddl.import_files">/insert.sql</property>
+		<property name="hibernate.hbm2ddl.auto">create</property>
+		<property name="hibernate.connection.characterEncoding">UTF-8</property>
+		<property name="hibernate.hbm2ddl.charset_name">UTF-8</property>
+		<mapping resource="db/Roles.hbm.xml"/>
+		<mapping resource="db/Users.hbm.xml"/>
+		<mapping resource="db/Types.hbm.xml"/>
+		<mapping resource="db/Place.hbm.xml"/>
+		<mapping resource="db/Tickets.hbm.xml"/>
+		<mapping resource="db/Comments.hbm.xml"/>
+		<mapping resource="db/Events.hbm.xml"/>
+		<mapping resource="db/Orders.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>

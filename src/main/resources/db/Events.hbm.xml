@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    <hibernate-mapping package="com.samsolutions.chillax.entity">
+    <class name="Events" table="EVENTS">
+        <id name="idEvent" type="int" column="ID_EVENT" >
+            <generator class="native" />
+        </id>
+        <property name="title" type="string" column="TITLE"/>
+        <property name="description" type="string" length="10000" column="DESCRIPTION"/>
+        <property name="poster" type="string" column="POSTER"/>
+        <property name="datetimeOfEvent" type="timestamp" column="DATE"/>
+        <property name="price" type="double" column="PRICE"/>
+        <property name="allTickets" type="int" column="ALLTICKETS"/>
+        <many-to-one name="type" class="Types">
+            <column name="ID_TYPE_FK"/>
+        </many-to-one>
+        <many-to-one name="place" class="Place">
+            <column name="ID_PLACE_FK"/>
+        </many-to-one>
+        <bag name="comments" cascade="delete-orphan" inverse="true" lazy="true">
+            <key column="ID_EVENT_FK"  />
+            <one-to-many class="Comments"  />
+        </bag>
+        <bag name="tickets" cascade="delete-orphan" inverse="true" lazy="true">
+            <key column="ID_EVENT_FK"  />
+            <one-to-many class="Tickets"  />
+        </bag>
+    </class>
+    </hibernate-mapping>

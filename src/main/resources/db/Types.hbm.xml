@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    <hibernate-mapping package="com.samsolutions.chillax.entity">
+    <class name="Types" table="Types">
+        <id name="idType" type="int" column="ID_TYPE" >
+            <generator class="native" />
+        </id>
+        <property name="nameOfType" type="string" column="NAME_OF_TYPE"/>
+        <bag name="events" cascade="delete-orphan" inverse="true" lazy="true">
+            <key column="ID_TYPE_FK"  />
+            <one-to-many class="Events"  />
+        </bag>
+    </class>
+    </hibernate-mapping>

@@ -1,0 +1,288 @@
+.content {
+    width: 1000px;
+    min-height: 1500px;
+    overflow: hidden;
+    margin: 20px auto 0 auto;
+    background-color: white;
+}
+
+body {
+    font-size: 17px;
+    line-height: 1.7em;
+    color: #353e55;
+    font-weight: 100;
+    background: #ffffff;
+    border: 10px solid #fff;
+}
+
+.has-error {
+    color: red;
+}
+
+.number {
+    width: 35px;
+}
+
+.padding {
+    padding-top: 6px;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+.inline {
+    display: inline;
+}
+
+svg {
+    fill: #fdf5e663;
+}
+
+.header h1 {
+    letter-spacing: 12px;
+    font-size: 300%;
+}
+
+.navbar-header.header {
+
+    height: 150px;
+}
+
+.navbar-inverse {
+    padding: 1%;
+    border: none;
+}
+
+@media (max-width: 767px) {
+    .nav-pills > li {
+        float: none;
+        text-align: center;
+    }
+
+    .header h1 {
+        letter-spacing: 5px;
+        font-size: 280%;
+    }
+
+    .header {
+        text-align: center;
+    }
+
+}
+
+.clear {
+    clear: both;
+    width: 63px;
+}
+
+html, body {
+    height: 100%;
+}
+
+.margin-8 {
+    margin-top: 8%;
+}
+
+#cart {
+    float: right;
+    padding-right: 20px;
+}
+
+a {
+    color: #ffffff;
+}
+
+.login {
+    padding: 2%;
+}
+
+footer {
+    color: #666;
+    background-color: #0e2b48;
+    padding: 17px 0 18px 0;
+    border-top: 1px solid #000;
+}
+
+footer a {
+    color: #999;
+}
+
+a:focus,
+a:hover {
+    color: #2b6973;
+    text-decoration: none;
+}
+
+li {
+    list-style-type: none;
+}
+
+.black {
+    color: black;
+}
+
+.bg-dark {
+    background-color: #0e2b48 !important;
+}
+
+.link {
+    float: right;
+}
+
+a.nav-link {
+    font-size: 150%;
+}
+
+a.navbar-brand {
+    font-size: 100%;
+}
+
+div#navbarSupportedContent.collapse.navbar-collapse {
+    padding-left: 20px;
+}
+
+.event_block {
+    text-align: center;
+}
+
+.event_block img {
+    margin-bottom: 5%;
+    width: 100%;
+    border-radius: 5px;
+    border: solid 5px #dad7d5;
+    margin-top: 10%;
+}
+
+p {
+    margin-bottom: 0;
+    font-weight: normal;
+}
+
+.height30 {
+    height: 30px;
+}
+
+a:not([href]):not([tabindex]) {
+    color: white;
+    text-decoration: none;
+}
+
+.right {
+    float: right;
+}
+
+.errorValid {
+    color: red;
+}
+
+.has-error {
+    border: 2px solid red;
+}
+
+.img-width {
+    width: 80px;
+}
+
+.h4-index {
+    font-size: 1.1rem;
+    height: 50px;
+}
+
+.vertical-align {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-event {
+    width: 400px;
+    margin: 10px 20px 0 0;
+    float: left;
+}
+
+h2 {
+    font-size: 50px;
+    font-style: italic;
+    margin-left: 10px;
+}
+
+p#remainder {
+    margin: 10px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.counter, .input-count {
+    color: #f8f9fa;
+    font-weight: 800;
+    background-color: #0e2b48;
+    width: 30px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+}
+
+.div-comment {
+    background-color: #f8f9fa;
+    color: #777;
+    font-size: 17px;
+    padding: 30px;
+}
+
+.span-comment {
+    font-size: 14px;
+    font-weight: 900;
+    padding-left: 30px;
+}
+
+.comment-btn {
+    color: #444242;
+    font-weight: 500;
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: #c7d0d8;
+    background-color: #f8f9fa;
+    float: right;
+}
+
+.size-25 {
+    font-size: 25px;
+}
+
+.weight {
+    font-weight: 600;
+}
+
+.logout-btn {
+    width: 80px;
+}
+
+.close-style {
+    background-color: #e9ecef;
+    border-color: #e9ecef;
+    margin-left: 5px;
+    color: black;
+}
+
+.margin-20 {
+    margin-bottom: 20px;
+}
+.margin-right{
+    margin-right: 40px;
+}
+.dropdown-menu {
+    min-width: 10px;
+}

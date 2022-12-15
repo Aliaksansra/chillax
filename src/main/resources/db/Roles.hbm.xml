@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+  <hibernate-mapping package="com.samsolutions.chillax.entity">
+    <class name="Roles" table="ROLES">
+        <id name="idRole" type="int" column="ID_ROLE" >
+            <generator class="native" />
+        </id>
+        <property name="role" type="string" column="ROLE"/>
+        <bag name="users" cascade="delete-orphan" inverse="true" lazy="true">
+            <key column="ID_ROLE_FK"/>
+            <one-to-many class="Users"/>
+        </bag>
+    </class>
+  </hibernate-mapping>

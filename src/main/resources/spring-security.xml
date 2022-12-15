@@ -1,0 +1,31 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+                 http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+                 http://www.springframework.org/schema/security 
+                 http://www.springframework.org/schema/security/spring-security-4.2.xsd">
+    <http auto-config="true">
+        <access-denied-handler error-page="/403"/>
+        <intercept-url pattern="/index*" access="permitAll"/>
+        <intercept-url pattern="/event*" access="permitAll"/>
+        <intercept-url pattern="/admin*" access="hasRole('ADMIN')"/>
+        <intercept-url pattern="/admin/**" access="hasRole('ADMIN')"/>
+        <intercept-url pattern="/api/admin/**" access="hasRole('ADMIN')"/>
+        <intercept-url pattern="/api/user/admin/**" access="hasRole('ADMIN')"/>
+        <form-login login-page="/403" default-target-url="/index" authentication-failure-url="/index?error=true"
+                    username-parameter="username" password-parameter="password"/>
+        <logout logout-url="/logout" logout-success-url="/index"/>
+        <anonymous username="guest" granted-authority="ROLE_ANONYMOUS"/>
+        <remember-me/>
+    </http>
+    <authentication-manager>
+        <authentication-provider user-service-ref="detailsService">
+            <password-encoder ref="encoder"/>
+        </authentication-provider>
+    </authentication-manager>
+    <beans:bean id="encoder"
+                class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+        <beans:constructor-arg name="strength" value="11"/>
+    </beans:bean>
+</beans:beans> 

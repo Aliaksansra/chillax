@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    <hibernate-mapping package="com.samsolutions.chillax.entity">
+    <class name="Orders" table="ORDERS">
+        <id name="idOrders" type="int" column="ID_ORDERS" >
+            <generator class="native" />
+        </id>
+        <property name="guid" type="string" column="GUID"/>
+        <property name="totalPrice" type="double" column="TOTAL_PRICE"/>
+        <property name="discount" type="int" column="DISCOUNT"/>
+        <property name="dateOfBooking" type="date" column="DATE_OF_BOOKING"/>
+        <property name="paid" type="boolean" column="PAID"/>
+        <bag name="tickets" cascade="delete-orphan" inverse="true" lazy="true">
+            <key column="ID_ORDER_FK"  />
+            <one-to-many class="Tickets"  />
+        </bag>
+        <many-to-one name="user" class="Users">
+            <column name="ID_USER_FK"/>
+        </many-to-one>
+    </class>
+    </hibernate-mapping>

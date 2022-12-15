@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    <hibernate-mapping package="com.samsolutions.chillax.entity">
+    <class name="Tickets" table="TICKETS">
+        <id name="idTickets" type="int" column="ID_TICKETS" >
+            <generator class="native" />
+        </id>
+        <property name="used" type="boolean" column="USED"/>
+        <property name="guid" type="string" column="GUID"/>
+        <many-to-one name="order" class="Orders">
+            <column name="ID_ORDER_FK"/>
+        </many-to-one>
+        <many-to-one name="event" class="Events">
+            <column name="ID_EVENT_FK"/>
+        </many-to-one>
+    </class>
+    </hibernate-mapping>
